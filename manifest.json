@@ -1,0 +1,11 @@
+{
+  "domain": "bwt_perla",
+  "name": "BWT Perla",
+  "documentation": "https://github.com/fuatakgun/bwt_perla",
+  "issue_tracker": "https://github.com/fuatakgun/bwt_perla/issues",
+  "dependencies": [],
+  "config_flow": true,
+  "codeowners": ["@fuatakgun"],
+  "requirements": [],
+  "version": "0.0.1"
+}
