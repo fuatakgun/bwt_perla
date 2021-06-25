@@ -1,0 +1,755 @@
+cd /data/data/com.termux/files/home/node_modules/eufy-security-ws/dist/bin
+node server.js --verbose
+
+cd /data/data/com.termux/files/home/node_modules/eufy-security-ws/dist/bin
+node client.js
+
+
+station - T8010N2320460480
+
+garage - T8113N63205018FC - rtsp://admin:admin@192.168.178.23/live0
+device.set_rtsp_stream T8113N63205018FC true
+device.set_rtsp_stream T8113N63205018FC false
+
+entrance - T8113N63205014E2 - rtsp://admin:admin@192.168.178.23/live1
+device.set_rtsp_stream T8113N63205014E2 true
+device.set_rtsp_stream T8113N63205014E2 false
+
+Device Camera
+camera
+- supported_features
+	SUPPORT_ON_OFF: Final = 1
+	SUPPORT_STREAM: Final = 2
+- name
+- brand
+- model
+- stream
+- is_streaming
+- available
+	- state
+	- enabled
+- is_on
+- turn_on
+	- start rtsp
+- turn_off
+	- stop rtsp
+- motion_detection_enabled
+- enable_motion_detection
+- disable_motion_detection
+- unique_id
+	- serialNumber
+- attributes
+	- name
+	- serialNumber
+	- type: ENUM
+	- hardwareVersion
+	- softwareVersion
+	- stationSerialNumber
+	- lastChargingDays
+	- lastChargingFalseEvents
+	- lastChargingRecordedEvents
+	- lastChargingTotalEvents
+	- batteryUsageLastWeek
+	- pictureUrl
+	- watermark: ENUM
+	- state
+	- rtspStream
+
+- motionDetected - binary - motion sensor
+- personDetected - binary - motion sensor
+- battery - sensor - battery
+- batteryTemperature - sensor - temperature
+- wifiRSSI - sensor - signal_strength
+- statusLed - binary - light
+- autoNightvision - binary - light
+- enabled - binary - power
+
+
+start_listening
+{
+  "type": "result",
+  "success": true,
+  "messageId": "start_listening_function",
+  "result": {
+    "state": {
+      "driver": {
+        "version": "0.8.3",
+        "connected": true,
+        "pushConnected": true
+      },
+      "stations": [
+        {
+          "name": "Home Base",
+          "model": "T8010",
+          "serialNumber": "T8010N2320460480",
+          "hardwareVersion": "P0",
+          "softwareVersion": "2.1.6.9h",
+          "lanIpAddress": "192.168.178.23",
+          "macAddress": "8C:85:80:75:2B:75",
+          "currentMode": 1,
+          "guardMode": 1,
+          "connected": true
+        }
+      ],
+      "devices": [
+        {
+          "name": "Entrance",
+          "model": "T8113-Z",
+          "serialNumber": "T8113N63205014E2",
+          "hardwareVersion": "T8113-Z",
+          "softwareVersion": "5.2.7",
+          "stationSerialNumber": "T8010N2320460480",
+          "enabled": true,
+          "state": 1,
+          "battery": 95,
+          "batteryTemperature": 24,
+          "lastChargingDays": 3,
+          "lastChargingTotalEvents": 250,
+          "lastChargingRecordedEvents": 185,
+          "lastChargingFalseEvents": 65,
+          "batteryUsageLastWeek": 11,
+          "motionDetected": false,
+          "personDetected": false,
+          "personName": "",
+          "antitheftDetection": false,
+          "autoNightvision": true,
+          "ledStatus": true,
+          "motionDetection": true,
+          "rtspStream": false,
+          "watermark": 1,
+          "wifiRSSI": -59,
+          "pictureUrl": "https://zhixin-security-eu.s3.eu-central-1.amazonaws.com/thumb/2021/06/19/station/T8010N2320460480/DyXDu3sTb82Wmxlq.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJYLV2KOLW6PU4FSA%2F20210619%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20210619T094803Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=74ad47499ad3c397e3908b64f966b8b89b4418f6a10b60fad2150b87d23ce99e"
+        },
+        {
+          "name": "Garage",
+          "model": "T8113-Z",
+          "serialNumber": "T8113N63205018FC",
+          "hardwareVersion": "T8113-Z",
+          "softwareVersion": "5.2.7",
+          "stationSerialNumber": "T8010N2320460480",
+          "enabled": true,
+          "state": 1,
+          "battery": 71,
+          "batteryTemperature": 23,
+          "lastChargingDays": 40,
+          "lastChargingTotalEvents": 1161,
+          "lastChargingRecordedEvents": 512,
+          "lastChargingFalseEvents": 649,
+          "batteryUsageLastWeek": 0,
+          "motionDetected": false,
+          "personDetected": false,
+          "personName": "",
+          "antitheftDetection": false,
+          "autoNightvision": true,
+          "ledStatus": true,
+          "motionDetection": true,
+          "rtspStream": false,
+          "watermark": 1,
+          "wifiRSSI": -62,
+          "pictureUrl": "https://zhixin-security-eu.s3.eu-central-1.amazonaws.com/thumb/2021/06/18/station/T8010N2320460480/c5xJxVXgQk9pnlop.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJYLV2KOLW6PU4FSA%2F20210619%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20210619T094803Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=22bbae8f99ee8fbe15ded2e4e7f8b57dc5b54c0717a3072dadbd8cf098a4777a"
+        }
+      ]
+    }
+  }
+}
+
+
+station.get_properties_metadata
+{
+  "type": "result",
+  "success": true,
+  "messageId": "station.get_properties_metadata",
+  "result": {
+    "properties": {
+      "name": {
+        "key": "station_name",
+        "name": "name",
+        "label": "Name",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "model": {
+        "key": "station_model",
+        "name": "model",
+        "label": "Model",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "serialNumber": {
+        "key": "station_sn",
+        "name": "serialNumber",
+        "label": "Serial number",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "type": {
+        "key": "device_type",
+        "name": "type",
+        "label": "Type",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "states": {
+          "0": "Station",
+          "1": "Camera",
+          "2": "Sensor",
+          "3": "Floodlight",
+          "4": "Camera E",
+          "5": "Doorbell",
+          "7": "Battery Doorbell",
+          "8": "Camera 2",
+          "9": "Camera 2c",
+          "10": "Motion Sensor",
+          "11": "Keypad",
+          "14": "Camera 2 Pro",
+          "15": "Camera 2c Pro",
+          "16": "Battery Doorbell 2",
+          "30": "Indoor Camera",
+          "31": "Indoor Camera PT",
+          "32": "Solo Camera",
+          "33": "Solo Camera Pro",
+          "34": "Indoor Camera 1080",
+          "35": "Indoor Camera PT 1080",
+          "50": "Lock Basic",
+          "51": "Lock Advanced",
+          "52": "Lock Basic No Finger",
+          "53": "Lock Basic Advanced No Finger"
+        }
+      },
+      "hardwareVersion": {
+        "key": "main_hw_version",
+        "name": "hardwareVersion",
+        "label": "Hardware version",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "softwareVersion": {
+        "key": "main_sw_version",
+        "name": "softwareVersion",
+        "label": "Software version",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "lanIpAddress": {
+        "key": 1176,
+        "name": "lanIpAddress",
+        "label": "LAN IP Address",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "macAddress": {
+        "key": "wifi_mac",
+        "name": "macAddress",
+        "label": "MAC Address",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "guardMode": {
+        "key": 1224,
+        "name": "guardMode",
+        "label": "Guard Mode",
+        "readable": true,
+        "writeable": true,
+        "type": "number",
+        "states": {
+          "0": "AWAY",
+          "1": "HOME",
+          "2": "SCHEDULE",
+          "3": "CUSTOM1",
+          "4": "CUSTOM2",
+          "5": "CUSTOM3",
+          "6": "OFF",
+          "47": "GEO",
+          "63": "DISARMED"
+        }
+      },
+      "currentMode": {
+        "key": 1151,
+        "name": "currentMode",
+        "label": "Current Mode",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "states": {
+          "0": "AWAY",
+          "1": "HOME",
+          "63": "DISARMED"
+        }
+      }
+    }
+  }
+}
+
+station.get_properties
+{
+  "type": "result",
+  "success": true,
+  "messageId": "station.get_properties",
+  "result": {
+    "properties": {
+      "name": {
+        "value": "Home Base",
+        "timestamp": 1623965630000
+      },
+      "model": {
+        "value": "T8010",
+        "timestamp": 1623965630000
+      },
+      "serialNumber": {
+        "value": "T8010N2320460480",
+        "timestamp": 1623965630000
+      },
+      "type": {
+        "value": 0,
+        "timestamp": 1623965630000
+      },
+      "hardwareVersion": {
+        "value": "P0",
+        "timestamp": 1623965630000
+      },
+      "softwareVersion": {
+        "value": "2.1.6.9h",
+        "timestamp": 1620741708000
+      },
+      "macAddress": {
+        "value": "8C:85:80:75:2B:75",
+        "timestamp": 1623965630000
+      },
+      "guardMode": {
+        "value": 1,
+        "timestamp": 1615498517000
+      },
+      "lanIpAddress": {
+        "value": "192.168.178.23",
+        "timestamp": 1623721357000
+      },
+      "currentMode": {
+        "value": 1,
+        "timestamp": 1623967714282
+      }
+    }
+  }
+}
+
+device.get_properties_metadata
+{
+  "type": "result",
+  "success": true,
+  "messageId": "device.get_properties_metadata",
+  "result": {
+    "properties": {
+      "name": {
+        "key": "device_name",
+        "name": "name",
+        "label": "Name",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "model": {
+        "key": "device_model",
+        "name": "model",
+        "label": "Model",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "serialNumber": {
+        "key": "device_sn",
+        "name": "serialNumber",
+        "label": "Serial number",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "type": {
+        "key": "device_type",
+        "name": "type",
+        "label": "Type",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "states": {
+          "0": "Station",
+          "1": "Camera",
+          "2": "Sensor",
+          "3": "Floodlight",
+          "4": "Camera E",
+          "5": "Doorbell",
+          "7": "Battery Doorbell",
+          "8": "Camera 2",
+          "9": "Camera 2c",
+          "10": "Motion Sensor",
+          "11": "Keypad",
+          "14": "Camera 2 Pro",
+          "15": "Camera 2c Pro",
+          "16": "Battery Doorbell 2",
+          "30": "Indoor Camera",
+          "31": "Indoor Camera PT",
+          "32": "Solo Camera",
+          "33": "Solo Camera Pro",
+          "34": "Indoor Camera 1080",
+          "35": "Indoor Camera PT 1080",
+          "50": "Lock Basic",
+          "51": "Lock Advanced",
+          "52": "Lock Basic No Finger",
+          "53": "Lock Basic Advanced No Finger"
+        }
+      },
+      "hardwareVersion": {
+        "key": "main_hw_version",
+        "name": "hardwareVersion",
+        "label": "Hardware version",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "softwareVersion": {
+        "key": "main_sw_version",
+        "name": "softwareVersion",
+        "label": "Software version",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "stationSerialNumber": {
+        "key": "station_sn",
+        "name": "stationSerialNumber",
+        "label": "Station serial number",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      },
+      "battery": {
+        "key": 1101,
+        "name": "battery",
+        "label": "Battery percentage",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "unit": "%",
+        "min": 0,
+        "max": 100
+      },
+      "batteryTemperature": {
+        "key": 1138,
+        "name": "batteryTemperature",
+        "label": "Battery Temperature",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "unit": "°C"
+      },
+      "wifiRSSI": {
+        "key": 1142,
+        "name": "wifiRSSI",
+        "label": "Wifi RSSI",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "unit": "dBm"
+      },
+      "enabled": {
+        "key": 99904,
+        "name": "enabled",
+        "label": "Camera enabled",
+        "readable": true,
+        "writeable": true,
+        "type": "boolean"
+      },
+      "antitheftDetection": {
+        "key": 1015,
+        "name": "antitheftDetection",
+        "label": "Antitheft Detection",
+        "readable": true,
+        "writeable": true,
+        "type": "boolean"
+      },
+      "autoNightvision": {
+        "key": 1013,
+        "name": "autoNightvision",
+        "label": "Auto Nightvision",
+        "readable": true,
+        "writeable": true,
+        "type": "boolean"
+      },
+      "statusLed": {
+        "key": 1045,
+        "name": "statusLed",
+        "label": "Status LED",
+        "readable": true,
+        "writeable": true,
+        "type": "boolean"
+      },
+      "motionDetection": {
+        "key": 1011,
+        "name": "motionDetection",
+        "label": "Motion Detection",
+        "readable": true,
+        "writeable": true,
+        "type": "boolean"
+      },
+      "rtspStream": {
+        "key": 1145,
+        "name": "rtspStream",
+        "label": "RTSP Stream",
+        "readable": true,
+        "writeable": true,
+        "type": "boolean"
+      },
+      "watermark": {
+        "key": 1214,
+        "name": "watermark",
+        "label": "Watermark",
+        "readable": true,
+        "writeable": true,
+        "type": "number",
+        "states": {
+          "0": "OFF",
+          "1": "TIMESTAMP",
+          "2": "TIMESTAMP_AND_LOGO"
+        }
+      },
+      "state": {
+        "key": 1131,
+        "name": "state",
+        "label": "State",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "states": {
+          "0": "OFFLINE",
+          "1": "ONLINE",
+          "2": "MANUALLY_DISABLED",
+          "3": "OFFLINE_LOWBAT",
+          "4": "REMOVE_AND_READD",
+          "5": "RESET_AND_READD"
+        }
+      },
+      "lastChargingDays": {
+        "key": "charging_days",
+        "name": "lastChargingDays",
+        "label": "Days since last charging",
+        "readable": true,
+        "writeable": false,
+        "type": "number"
+      },
+      "lastChargingFalseEvents": {
+        "key": "charging_missing",
+        "name": "lastChargingFalseEvents",
+        "label": "False Events since last charging",
+        "readable": true,
+        "writeable": false,
+        "type": "number"
+      },
+      "lastChargingRecordedEvents": {
+        "key": "charging_reserve",
+        "name": "lastChargingRecordedEvents",
+        "label": "Total Events since last charging",
+        "readable": true,
+        "writeable": false,
+        "type": "number"
+      },
+      "lastChargingTotalEvents": {
+        "key": "charing_total",
+        "name": "lastChargingTotalEvents",
+        "label": "Total Events since last charging",
+        "readable": true,
+        "writeable": false,
+        "type": "number"
+      },
+      "batteryUsageLastWeek": {
+        "key": "battery_usage_last_week",
+        "name": "batteryUsageLastWeek",
+        "label": "False Events since last charging",
+        "readable": true,
+        "writeable": false,
+        "type": "number",
+        "unit": "%",
+        "min": 0,
+        "max": 100
+      },
+      "motionDetected": {
+        "key": "custom_motionDetected",
+        "name": "motionDetected",
+        "label": "Motion detected",
+        "readable": true,
+        "writeable": false,
+        "type": "boolean"
+      },
+      "personDetected": {
+        "key": "custom_personDetected",
+        "name": "personDetected",
+        "label": "Person detected",
+        "readable": true,
+        "writeable": false,
+        "type": "boolean"
+      },
+      "pictureUrl": {
+        "key": "cover_path",
+        "name": "pictureUrl",
+        "label": "Last Camera Picture URL",
+        "readable": true,
+        "writeable": false,
+        "type": "string"
+      }
+    }
+  }
+}
+
+device.get_properties
+{
+  "type": "result",
+  "success": true,
+  "messageId": "device.get_properties",
+  "result": {
+    "properties": {
+      "name": {
+        "value": "Entrance",
+        "timestamp": 1623965630000
+      },
+      "model": {
+        "value": "T8113-Z",
+        "timestamp": 1623965630000
+      },
+      "serialNumber": {
+        "value": "T8113N63205014E2",
+        "timestamp": 1623965630000
+      },
+      "type": {
+        "value": 8,
+        "timestamp": 1623965630000
+      },
+      "hardwareVersion": {
+        "value": "T8113-Z",
+        "timestamp": 1623965630000
+      },
+      "softwareVersion": {
+        "value": "5.2.7",
+        "timestamp": 1612754167000
+      },
+      "stationSerialNumber": {
+        "value": "T8010N2320460480",
+        "timestamp": 1623965630000
+      },
+      "lastChargingDays": {
+        "value": 3,
+        "timestamp": 1624039326000
+      },
+      "lastChargingFalseEvents": {
+        "value": 65,
+        "timestamp": 1624096060000
+      },
+      "lastChargingRecordedEvents": {
+        "value": 185,
+        "timestamp": 1624096060000
+      },
+      "lastChargingTotalEvents": {
+        "value": 250,
+        "timestamp": 1624096060000
+      },
+      "batteryUsageLastWeek": {
+        "value": 11,
+        "timestamp": 1624085233000
+      },
+      "pictureUrl": {
+        "value": "https://zhixin-security-eu.s3.eu-central-1.amazonaws.com/thumb/2021/06/19/station/T8010N2320460480/DyXDu3sTb82Wmxlq.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJYLV2KOLW6PU4FSA%2F20210619%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20210619T094803Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=74ad47499ad3c397e3908b64f966b8b89b4418f6a10b60fad2150b87d23ce99e",
+        "timestamp": 1624096044000
+      },
+      "watermark": {
+        "value": 1,
+        "timestamp": 1612265064000
+      },
+      "batteryTemperature": {
+        "value": 24,
+        "timestamp": 1623967714282
+      },
+      "state": {
+        "value": 1,
+        "timestamp": 1619015562000
+      },
+      "battery": {
+        "value": 95,
+        "timestamp": 1624041289473
+      },
+      "motionDetection": {
+        "value": true,
+        "timestamp": 1612263234000
+      },
+      "antitheftDetection": {
+        "value": false,
+        "timestamp": 1612263234000
+      },
+      "wifiRSSI": {
+        "value": -59,
+        "timestamp": 1624096079712
+      },
+      "statusLed": {
+        "value": true,
+        "timestamp": 1616056809000
+      },
+      "autoNightvision": {
+        "value": true,
+        "timestamp": 1612263234000
+      },
+      "enabled": {
+        "value": true,
+        "timestamp": 1612263231000
+      },
+      "rtspStream": {
+        "value": false,
+        "timestamp": 1624096082449
+      },
+      "motionDetected": {
+        "value": false,
+        "timestamp": 1624100802365
+      },
+      "personDetected": {
+        "value": false,
+        "timestamp": 1624098067202
+      },
+      "personName": {
+        "value": "",
+        "timestamp": 1624098067202
+      }
+    }
+  }
+}
+
+
+
+
+{
+  "type": "event",
+  "event": {
+    "source": "device",
+    "event": "property changed",
+    "serialNumber": "T8113N63205014E2",
+    "name": "motionDetected",
+    "value": true,
+    "timestamp": 1624105075517
+  }
+}
+
+set rtsp on
+{"type":"event","event":{"source":"device","event":"got rtsp url","serialNumber":"T8113N63205018FC","rtspUrl":"rtsp://admin:admin@192.168.178.23/live0"}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205018FC","name":"rtspStream","value":true,"timestamp":1624105451408}}
+{"type":"event","event":{"source":"device","event":"command result","serialNumber":"T8113N63205018FC","command":"set_rtsp_stream","returnCode":0,"returnCodeName":"ERROR_PPCS_SUCCESSFUL"}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205014E2","name":"lastChargingFalseEvents","value":67,"timestamp":1624105086000}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205014E2","name":"lastChargingRecordedEvents","value":198,"timestamp":1624105086000}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205018FC","name":"pictureUrl","value":"https://zhixin-security-eu.s3.eu-central-1.amazonaws.com/thumb/2021/06/18/station/T8010N2320460480/c5xJxVXgQk9pnlop.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJYLV2KOLW6PU4FSA%2F20210619%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20210619T122054Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=bbce448cb6bc25a6f691595cd5f9e51df0eac93daa6ffc8a7be1b4e57e8f8974","timestamp":1624025728000}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205014E2","name":"wifiRSSI","value":-63,"timestamp":1624105254025}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205014E2","name":"battery","value":94,"timestamp":1624105254025}}
+
+
+
+set rtsp off
+{"type":"event","event":{"source":"device","event":"command result","serialNumber":"T8113N63205018FC","command":"set_rtsp_stream","returnCode":0,"returnCodeName":"ERROR_PPCS_SUCCESSFUL"}}
+{"type":"event","event":{"source":"device","event":"property changed","serialNumber":"T8113N63205018FC","name":"rtspStream","value":false,"timestamp":1624105451408}}

@@ -3,22 +3,27 @@ import logging
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, NAME, VERSION
-from .coordinator import BWTPerlaDataUpdateCoordinator
+from .coordinator import EufySecurityDataUpdateCoordinator
 
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 
 
-class BWTPerlaEntity(CoordinatorEntity):
-    def __init__(self, coordinator: BWTPerlaDataUpdateCoordinator, entry):
+class EufySecurityEntity(CoordinatorEntity):
+    def __init__(
+        self, coordinator: EufySecurityDataUpdateCoordinator, entry, entity: dict
+    ):
         super().__init__(coordinator)
         self.entry = entry
+        self.entity = entity
 
     @property
     def device_info(self):
         return {
-            "identifiers": {(DOMAIN, self.coordinator.api.host)},
-            "name": NAME,
-            "model": VERSION,
+            "identifiers": {(DOMAIN, self.entity["serialNumber"])},
+            "name": self.entity["name"],
+            "model": self.entity["model"],
+            "hardware": self.entity["hardwareVersion"],
+            "software": self.entity["softwareVersion"],
             "manufacturer": NAME,
         }
 
