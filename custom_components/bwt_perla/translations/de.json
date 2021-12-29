@@ -1,0 +1,30 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "BWT Perla: Authentifizierung",
+        "description": "Bitte IP Adresse und Web UI Zugriffscode der BWT Perla eingeben",
+        "data": {
+          "host": "Host IP Adresse (z.B. 192.168.178.22)",
+          "code": "Code"
+        }
+      }
+    },
+    "error": {
+      "auth": "Host/Code ist falsch."
+    },
+    "abort": {
+      "single_instance_allowed": "Nur eine Instanz ist erlaubt."
+    }
+  },
+  "options": {
+    "step": {
+      "user": {
+        "title": "BWT Perla: Konfiguration",
+        "data": {
+          "sync_interval": "Synchronisierungsintervall in Sekunden um Daten zu laden"
+        }
+      }
+    }
+  }
+}
