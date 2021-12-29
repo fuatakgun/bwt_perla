@@ -103,7 +103,7 @@ async def async_setup_entry(hass, entry, async_add_devices):
         ),
         (
             "regenerations_total",
-            "Regeneratins since commissioning",
+            "Regenerations since commissioning",
             "regenerations_total",
             None,
             "mdi:refresh",
@@ -111,7 +111,7 @@ async def async_setup_entry(hass, entry, async_add_devices):
         ),    
         (
             "regenerations_maintenance",
-            "Regeneratins since maintenance",
+            "Regenerations since maintenance",
             "regenerations_maintenance",
             None,
             "mdi:refresh",
