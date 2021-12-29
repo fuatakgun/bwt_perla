@@ -7,6 +7,7 @@ from homeassistant.const import (
     PERCENTAGE,
     TIME_DAYS,
     VOLUME_LITERS,
+    MASS_KILOGRAMS,
 )
 
 from .const import DOMAIN
@@ -76,6 +77,46 @@ async def async_setup_entry(hass, entry, async_add_devices):
             "mdi:calendar-today",
             None,
         ),
+        (
+            "regeneratingagent_commissioning",
+            "Regenerating agent since commissioning",
+            "regeneratingagent_commissioning",
+            MASS_KILOGRAMS,
+            "mdi:grain",
+            None,
+        ),
+        (
+            "regeneratingagent_maintenance",
+            "Regenerating agent since maintenance",
+            "regeneratingagent_maintenance",
+            MASS_KILOGRAMS,
+            "mdi:grain",
+            None,
+        ),
+        (
+            "regeneratingagent_refill",
+            "Regenerating agent since refill",
+            "regeneratingagent_refill",
+            MASS_KILOGRAMS,
+            "mdi:grain",
+            None,
+        ),
+        (
+            "regenerations_total",
+            "Regeneratins since commissioning",
+            "regenerations_total",
+            None,
+            "mdi:refresh",
+            None,
+        ),    
+        (
+            "regenerations_maintenance",
+            "Regeneratins since maintenance",
+            "regenerations_maintenance",
+            None,
+            "mdi:refresh",
+            None,
+        ),    
     ]
 
     sensors = [
